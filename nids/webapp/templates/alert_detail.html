@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Alert #{{ alert.id }} — nids dashboard{% endblock %}
+{% block content %}
+
+<p><a href="{{ url_for('index') }}">&larr; back to all alerts</a></p>
+
+<h1 class="severity-{{ alert.severity }}">{{ alert.title }}</h1>
+
+<dl class="alert-fields">
+  <dt>Rule triggered</dt><dd><code>{{ alert.rule_id }}</code></dd>
+  <dt>Severity</dt><dd><span class="badge severity-{{ alert.severity }}">{{ alert.severity }}</span></dd>
+  <dt>Timestamp</dt><dd>{{ alert.timestamp }}</dd>
+  <dt>Source IP</dt><dd>{{ alert.source_ip or "—" }}</dd>
+  <dt>Threshold that was crossed</dt><dd><code>{{ alert.threshold }}</code></dd>
+  <dt>Description</dt><dd>{{ alert.description }}</dd>
+</dl>
+
+<h2>Supporting evidence</h2>
+<pre class="evidence">{{ alert.evidence | tojson(indent=2) }}</pre>
+
+{% endblock %}

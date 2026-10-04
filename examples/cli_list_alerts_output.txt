@@ -1,0 +1,5 @@
+#5    [  high] traffic_spike        2026-01-15T09:29:59  src=-                Unusual traffic volume spike
+#4    [  high] failed_auth_burst    2026-01-15T09:20:02  src=198.51.100.23    Possible brute-force login attempt from 198.51.100.23
+#3    [medium] port_scan            2026-01-15T09:12:20.197000  src=203.0.113.50     Possible port scan from 203.0.113.50
+#2    [  high] port_scan            2026-01-15T09:12:10.122000  src=203.0.113.50     Possible port scan from 203.0.113.50
+#1    [  high] port_scan            2026-01-15T09:12:00.087000  src=203.0.113.50     Possible port scan from 203.0.113.50

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Alerts — nids dashboard{% endblock %}
+{% block content %}
+
+<section class="summary-cards">
+  <div class="card"><span class="num">{{ summary.connection_events }}</span><span class="label">connection events</span></div>
+  <div class="card"><span class="num">{{ summary.auth_events }}</span><span class="label">auth events</span></div>
+  <div class="card"><span class="num">{{ summary.alerts }}</span><span class="label">alerts</span></div>
+  {% for sev in ["high", "medium", "low"] %}
+  <div class="card severity-{{ sev }}">
+    <span class="num">{{ summary.alerts_by_severity.get(sev, 0) }}</span>
+    <span class="label">{{ sev }} severity</span>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="toolbar">
+  <form method="get" class="filters">
+    <label>Rule:
+      <select name="rule_id" onchange="this.form.submit()">
+        <option value="" {% if not active_rule %}selected{% endif %}>all rules</option>
+        {% for rule, count in summary.alerts_by_rule.items() %}
+        <option value="{{ rule }}" {% if active_rule == rule %}selected{% endif %}>{{ rule }} ({{ count }})</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>Severity:
+      <select name="severity" onchange="this.form.submit()">
+        <option value="" {% if not active_severity %}selected{% endif %}>all severities</option>
+        {% for sev in ["high", "medium", "low"] %}
+        <option value="{{ sev }}" {% if active_severity == sev %}selected{% endif %}>{{ sev }}</option>
+        {% endfor %}
+      </select>
+    </label>
+  </form>
+  <form method="post" action="{{ url_for('rerun') }}">
+    <button type="submit">Re-run detectors</button>
+  </form>
+</section>
+
+<table class="alerts-table">
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Severity</th>
+      <th>Rule</th>
+      <th>Source IP</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for alert in alerts %}
+    <tr class="severity-{{ alert.severity }}">
+      <td><a href="{{ url_for('alert_detail', alert_id=alert.id) }}">{{ alert.timestamp }}</a></td>
+      <td><span class="badge severity-{{ alert.severity }}">{{ alert.severity }}</span></td>
+      <td><code>{{ alert.rule_id }}</code></td>
+      <td>{{ alert.source_ip or "—" }}</td>
+      <td><a href="{{ url_for('alert_detail', alert_id=alert.id) }}">{{ alert.title }}</a></td>
+    </tr>
+    {% else %}
+    <tr><td colspan="5" class="empty">No alerts yet. Ingest sample data and run detectors first (see README).</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

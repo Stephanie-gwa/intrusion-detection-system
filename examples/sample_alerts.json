@@ -1,0 +1,985 @@
+[
+  {
+    "id": 5,
+    "rule_id": "traffic_spike",
+    "severity": "high",
+    "timestamp": "2026-01-15T09:29:59",
+    "title": "Unusual traffic volume spike",
+    "description": "7,156,017 bytes transferred in a 10-second window (80 connections), compared to a baseline average of 2,235 bytes across the other 46 windows observed.",
+    "threshold": ">= 3.0 std. deviations above baseline AND >= 200,000 bytes",
+    "source_ip": null,
+    "evidence": {
+      "bucket_total_bytes": 7156017,
+      "bucket_connection_count": 80,
+      "baseline_mean_bytes": 2235.304347826087,
+      "baseline_stdev_bytes": 1149.5315845570055,
+      "z_score": 6223.2145612675995,
+      "window_start": "2026-01-15T09:29:59",
+      "window_end": "2026-01-15T09:30:09",
+      "source_ips": [
+        "10.0.0.5",
+        "10.0.0.6",
+        "10.0.0.7",
+        "10.0.0.8"
+      ],
+      "destination_ips": [
+        "10.0.0.9"
+      ],
+      "sample_events": [
+        {
+          "timestamp": "2026-01-15T09:30:00.121000",
+          "src_ip": "10.0.0.5",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 107297,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.249000",
+          "src_ip": "10.0.0.8",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 80055,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.383000",
+          "src_ip": "10.0.0.5",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 80616,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.404000",
+          "src_ip": "10.0.0.6",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 102795,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.492000",
+          "src_ip": "10.0.0.7",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 83548,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.627000",
+          "src_ip": "10.0.0.6",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 59133,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.647000",
+          "src_ip": "10.0.0.7",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 91099,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.779000",
+          "src_ip": "10.0.0.5",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 87457,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.855000",
+          "src_ip": "10.0.0.8",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 101554,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.903000",
+          "src_ip": "10.0.0.7",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 56473,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:00.926000",
+          "src_ip": "10.0.0.6",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 116282,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:01.013000",
+          "src_ip": "10.0.0.8",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 87004,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:01.145000",
+          "src_ip": "10.0.0.6",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 118333,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:01.171000",
+          "src_ip": "10.0.0.7",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 110454,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:01.294000",
+          "src_ip": "10.0.0.5",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 80763,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:01.437000",
+          "src_ip": "10.0.0.6",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 112832,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:01.527000",
+          "src_ip": "10.0.0.7",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 71434,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:01.667000",
+          "src_ip": "10.0.0.7",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 101937,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:01.806000",
+          "src_ip": "10.0.0.8",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 106988,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:30:01.834000",
+          "src_ip": "10.0.0.6",
+          "dst_ip": "10.0.0.9",
+          "dst_port": 443,
+          "protocol": "tcp",
+          "bytes_sent": 94560,
+          "flag": "S"
+        }
+      ]
+    },
+    "created_at": "2026-10-03 03:14:52"
+  },
+  {
+    "id": 4,
+    "rule_id": "failed_auth_burst",
+    "severity": "high",
+    "timestamp": "2026-01-15T09:20:02",
+    "title": "Possible brute-force login attempt from 198.51.100.23",
+    "description": "198.51.100.23 generated 25 failed login attempts within a 60-second window (threshold: 8). A successful login as 'root' from the same source followed within 30s of the burst.",
+    "threshold": ">= 8 failed logins / 60s",
+    "source_ip": "198.51.100.23",
+    "evidence": {
+      "failed_attempts": 25,
+      "usernames_tried": [
+        "admin",
+        "root",
+        "test",
+        "user"
+      ],
+      "window_start": "2026-01-15T09:20:02",
+      "window_end": "2026-01-15T09:21:02",
+      "followed_by_success": true,
+      "success_username": "root",
+      "sample_events": [
+        {
+          "timestamp": "2026-01-15T09:20:02",
+          "src_ip": "198.51.100.23",
+          "username": "test",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:04",
+          "src_ip": "198.51.100.23",
+          "username": "root",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:07",
+          "src_ip": "198.51.100.23",
+          "username": "test",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:08",
+          "src_ip": "198.51.100.23",
+          "username": "admin",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:11",
+          "src_ip": "198.51.100.23",
+          "username": "root",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:14",
+          "src_ip": "198.51.100.23",
+          "username": "root",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:16",
+          "src_ip": "198.51.100.23",
+          "username": "user",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:20",
+          "src_ip": "198.51.100.23",
+          "username": "admin",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:21",
+          "src_ip": "198.51.100.23",
+          "username": "user",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:22",
+          "src_ip": "198.51.100.23",
+          "username": "root",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:26",
+          "src_ip": "198.51.100.23",
+          "username": "test",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:28",
+          "src_ip": "198.51.100.23",
+          "username": "admin",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:30",
+          "src_ip": "198.51.100.23",
+          "username": "root",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:33",
+          "src_ip": "198.51.100.23",
+          "username": "test",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:37",
+          "src_ip": "198.51.100.23",
+          "username": "test",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:40",
+          "src_ip": "198.51.100.23",
+          "username": "root",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:42",
+          "src_ip": "198.51.100.23",
+          "username": "root",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:43",
+          "src_ip": "198.51.100.23",
+          "username": "test",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:47",
+          "src_ip": "198.51.100.23",
+          "username": "test",
+          "success": false,
+          "service": "ssh"
+        },
+        {
+          "timestamp": "2026-01-15T09:20:50",
+          "src_ip": "198.51.100.23",
+          "username": "user",
+          "success": false,
+          "service": "ssh"
+        }
+      ]
+    },
+    "created_at": "2026-10-03 03:14:52"
+  },
+  {
+    "id": 3,
+    "rule_id": "port_scan",
+    "severity": "medium",
+    "timestamp": "2026-01-15T09:12:20.197000",
+    "title": "Possible port scan from 203.0.113.50",
+    "description": "203.0.113.50 touched 29 distinct destination ports within a 10-second window (threshold: 15).",
+    "threshold": ">= 15 distinct ports / 10s",
+    "source_ip": "203.0.113.50",
+    "evidence": {
+      "distinct_ports": 29,
+      "destination_ips": [
+        "10.0.0.5"
+      ],
+      "window_start": "2026-01-15T09:12:20.197000",
+      "window_end": "2026-01-15T09:12:25.896000",
+      "sample_events": [
+        {
+          "timestamp": "2026-01-15T09:12:20.197000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 827,
+          "protocol": "tcp",
+          "bytes_sent": 59,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:20.298000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 834,
+          "protocol": "tcp",
+          "bytes_sent": 44,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:20.535000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 841,
+          "protocol": "tcp",
+          "bytes_sent": 72,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:20.693000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 848,
+          "protocol": "tcp",
+          "bytes_sent": 79,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:20.877000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 855,
+          "protocol": "tcp",
+          "bytes_sent": 76,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:21.163000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 862,
+          "protocol": "tcp",
+          "bytes_sent": 64,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:21.400000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 869,
+          "protocol": "tcp",
+          "bytes_sent": 65,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:21.473000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 876,
+          "protocol": "tcp",
+          "bytes_sent": 52,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:21.730000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 883,
+          "protocol": "tcp",
+          "bytes_sent": 51,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:21.963000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 890,
+          "protocol": "tcp",
+          "bytes_sent": 63,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:22.195000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 897,
+          "protocol": "tcp",
+          "bytes_sent": 53,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:22.486000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 904,
+          "protocol": "tcp",
+          "bytes_sent": 73,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:22.705000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 911,
+          "protocol": "tcp",
+          "bytes_sent": 43,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:22.940000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 918,
+          "protocol": "tcp",
+          "bytes_sent": 55,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:23.015000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 925,
+          "protocol": "tcp",
+          "bytes_sent": 58,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:23.207000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 932,
+          "protocol": "tcp",
+          "bytes_sent": 60,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:23.330000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 939,
+          "protocol": "tcp",
+          "bytes_sent": 60,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:23.604000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 946,
+          "protocol": "tcp",
+          "bytes_sent": 58,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:23.888000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 953,
+          "protocol": "tcp",
+          "bytes_sent": 42,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:24.003000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 960,
+          "protocol": "tcp",
+          "bytes_sent": 66,
+          "flag": "S"
+        }
+      ],
+      "total_events_in_window": 29
+    },
+    "created_at": "2026-10-03 03:14:52"
+  },
+  {
+    "id": 2,
+    "rule_id": "port_scan",
+    "severity": "high",
+    "timestamp": "2026-01-15T09:12:10.122000",
+    "title": "Possible port scan from 203.0.113.50",
+    "description": "203.0.113.50 touched 60 distinct destination ports within a 10-second window (threshold: 15).",
+    "threshold": ">= 15 distinct ports / 10s",
+    "source_ip": "203.0.113.50",
+    "evidence": {
+      "distinct_ports": 60,
+      "destination_ips": [
+        "10.0.0.5"
+      ],
+      "window_start": "2026-01-15T09:12:10.122000",
+      "window_end": "2026-01-15T09:12:20.116000",
+      "sample_events": [
+        {
+          "timestamp": "2026-01-15T09:12:10.122000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 407,
+          "protocol": "tcp",
+          "bytes_sent": 52,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:10.194000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 414,
+          "protocol": "tcp",
+          "bytes_sent": 75,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:10.407000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 421,
+          "protocol": "tcp",
+          "bytes_sent": 73,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:10.657000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 428,
+          "protocol": "tcp",
+          "bytes_sent": 50,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:10.813000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 435,
+          "protocol": "tcp",
+          "bytes_sent": 54,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:11.089000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 442,
+          "protocol": "tcp",
+          "bytes_sent": 78,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:11.354000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 449,
+          "protocol": "tcp",
+          "bytes_sent": 45,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:11.648000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 456,
+          "protocol": "tcp",
+          "bytes_sent": 54,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:11.826000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 463,
+          "protocol": "tcp",
+          "bytes_sent": 51,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:11.987000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 470,
+          "protocol": "tcp",
+          "bytes_sent": 41,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:12.145000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 477,
+          "protocol": "tcp",
+          "bytes_sent": 73,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:12.334000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 484,
+          "protocol": "tcp",
+          "bytes_sent": 59,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:12.410000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 491,
+          "protocol": "tcp",
+          "bytes_sent": 80,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:12.542000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 498,
+          "protocol": "tcp",
+          "bytes_sent": 58,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:12.605000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 505,
+          "protocol": "tcp",
+          "bytes_sent": 71,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:12.748000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 512,
+          "protocol": "tcp",
+          "bytes_sent": 60,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:12.804000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 519,
+          "protocol": "tcp",
+          "bytes_sent": 63,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:13.003000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 526,
+          "protocol": "tcp",
+          "bytes_sent": 77,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:13.137000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 533,
+          "protocol": "tcp",
+          "bytes_sent": 53,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:13.213000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 540,
+          "protocol": "tcp",
+          "bytes_sent": 74,
+          "flag": "S"
+        }
+      ],
+      "total_events_in_window": 60
+    },
+    "created_at": "2026-10-03 03:14:52"
+  },
+  {
+    "id": 1,
+    "rule_id": "port_scan",
+    "severity": "high",
+    "timestamp": "2026-01-15T09:12:00.087000",
+    "title": "Possible port scan from 203.0.113.50",
+    "description": "203.0.113.50 touched 58 distinct destination ports within a 10-second window (threshold: 15).",
+    "threshold": ">= 15 distinct ports / 10s",
+    "source_ip": "203.0.113.50",
+    "evidence": {
+      "distinct_ports": 58,
+      "destination_ips": [
+        "10.0.0.5"
+      ],
+      "window_start": "2026-01-15T09:12:00.087000",
+      "window_end": "2026-01-15T09:12:09.964000",
+      "sample_events": [
+        {
+          "timestamp": "2026-01-15T09:12:00.087000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 1,
+          "protocol": "tcp",
+          "bytes_sent": 69,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:00.387000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 8,
+          "protocol": "tcp",
+          "bytes_sent": 45,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:00.671000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 15,
+          "protocol": "tcp",
+          "bytes_sent": 79,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:00.846000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 22,
+          "protocol": "tcp",
+          "bytes_sent": 69,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:01.084000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 29,
+          "protocol": "tcp",
+          "bytes_sent": 41,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:01.178000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 36,
+          "protocol": "tcp",
+          "bytes_sent": 52,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:01.269000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 43,
+          "protocol": "tcp",
+          "bytes_sent": 55,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:01.511000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 50,
+          "protocol": "tcp",
+          "bytes_sent": 54,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:01.726000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 57,
+          "protocol": "tcp",
+          "bytes_sent": 42,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:01.957000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 64,
+          "protocol": "tcp",
+          "bytes_sent": 80,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:02.211000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 71,
+          "protocol": "tcp",
+          "bytes_sent": 68,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:02.379000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 78,
+          "protocol": "tcp",
+          "bytes_sent": 65,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:02.601000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 85,
+          "protocol": "tcp",
+          "bytes_sent": 59,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:02.843000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 92,
+          "protocol": "tcp",
+          "bytes_sent": 60,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:02.899000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 99,
+          "protocol": "tcp",
+          "bytes_sent": 67,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:03.039000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 106,
+          "protocol": "tcp",
+          "bytes_sent": 80,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:03.115000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 113,
+          "protocol": "tcp",
+          "bytes_sent": 50,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:03.185000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 120,
+          "protocol": "tcp",
+          "bytes_sent": 40,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:03.467000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 127,
+          "protocol": "tcp",
+          "bytes_sent": 59,
+          "flag": "S"
+        },
+        {
+          "timestamp": "2026-01-15T09:12:03.678000",
+          "src_ip": "203.0.113.50",
+          "dst_ip": "10.0.0.5",
+          "dst_port": 134,
+          "protocol": "tcp",
+          "bytes_sent": 52,
+          "flag": "S"
+        }
+      ],
+      "total_events_in_window": 58
+    },
+    "created_at": "2026-10-03 03:14:52"
+  }
+]

@@ -1,0 +1,4 @@
+# Optional: only needed for `nids live` (live packet capture).
+# Live capture also typically requires root/administrator privileges
+# to open a raw socket. See README's "Optional live monitoring" section.
+scapy>=2.5
